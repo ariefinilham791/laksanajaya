@@ -1,0 +1,692 @@
+/* PT Laksana Jaya Indonesia - Custom Header Override */
+
+/* =============================================
+   HEADER — putih, tinggi seragam semua halaman
+   ============================================= */
+.main-header .header-upper.style-three {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    height: 80px;
+    min-height: 80px;
+}
+
+/* Container header: flexbox, tinggi ikut header, vertikal center */
+.main-header .header-upper.style-three .container {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Logo: hapus padding bawaan agar tidak mempengaruhi tinggi */
+.main-header .header-upper.style-three .logo-outer {
+    float: none !important;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Area kanan (nav + search) */
+.main-header .header-upper.style-three .upper-right {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* Nav outer: dorong menu ke pojok kanan */
+.main-header .header-upper.style-three .nav-outer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Main menu: override float:left bawaan */
+.main-header .header-upper.style-three .main-menu {
+    float: none !important;
+    margin-left: auto;
+}
+
+/* Sembunyikan search box */
+.main-header .header-upper.style-three .outer-box {
+    display: none;
+}
+
+/* =============================================
+   WARNA TEKS NAVIGASI (gelap di atas putih)
+   ============================================= */
+.header-upper.style-three .navigation li a {
+    color: #212733;
+}
+.header-upper.style-three .navigation li.current a {
+    color: #e6202d !important;
+}
+.header-upper.style-three .navigation li a:hover {
+    color: #e6202d;
+}
+.main-header .header-upper.style-three .search-box-btn {
+    color: #212733;
+}
+
+/* =============================================
+   BANNER / SLIDER LEBIH BESAR
+   ============================================= */
+
+/* index.html — slider utama */
+.main-slider2 {
+    min-height: 720px !important;
+}
+.main-slider2 .slider-wrapper .image img {
+    height: 820px !important;
+}
+
+/* Slider home: sembunyikan tombol arrow, hanya autoplay */
+.main-slider2 .owl-nav,
+.main-slider2 .slide-nav .owl-nav {
+    display: none !important;
+}
+
+/* about / services / contact — banner page-title */
+.page-title .outer-box {
+    height: 360px !important;
+}
+
+/* =============================================
+   STICKY HEADER
+   ============================================= */
+.sticky-header .container {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+.sticky-header .logo {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+}
+.sticky-header .right-col {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* =============================================
+   RESPONSIVE — TABLET & MOBILE
+   ============================================= */
+
+/* Tablet (≤991px): menu collapse, header tetap rapi */
+@media only screen and (max-width: 991px) {
+    .main-header .header-upper.style-three {
+        height: auto;
+        min-height: 70px;
+        overflow: visible;
+    }
+    .main-header .header-upper.style-three .container {
+        height: auto;
+        min-height: 70px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    /* Logo tidak full width agar tombol menu tetap satu baris dengan logo */
+    .main-header .header-upper.style-three .logo-outer {
+        width: auto !important;
+        flex-shrink: 0;
+    }
+    .main-header .header-upper.style-three .upper-right {
+        width: auto !important;
+        flex-shrink: 0;
+    }
+
+    /* Tombol menu (hamburger) — pastikan terlihat di mobile */
+    .main-header .header-upper.style-three .navbar-header {
+        display: block !important;
+        visibility: visible !important;
+        flex-shrink: 0;
+        order: 2;
+    }
+    .main-header .header-upper.style-three .navbar-header .navbar-toggle {
+        display: inline-block !important;
+        visibility: visible !important;
+        padding: 10px 12px;
+        margin: 0;
+        background: #f5f5f5 !important;
+        border: 1px solid rgba(0,0,0,0.12) !important;
+        border-radius: 6px;
+    }
+    .main-header .header-upper.style-three .navbar-header .navbar-toggle .icon-bar {
+        background: #212733 !important;
+        height: 2.5px;
+        width: 24px;
+        margin: 5px 0;
+    }
+
+    /* Dropdown menu (collapse) — teks gelap di background putih */
+    .main-header .header-upper.style-three .navbar-collapse .navigation li a {
+        color: #212733 !important;
+    }
+    .main-header .header-upper.style-three .navbar-collapse .navigation li.current a {
+        color: #e6202d !important;
+    }
+    .main-header .header-upper.style-three .navbar-collapse .navigation li {
+        border-top-color: rgba(0,0,0,0.08) !important;
+    }
+    .sticky-header .logo a img {
+        max-height: 44px !important;
+    }
+}
+
+/* Mobile (≤767px): banner & section lebih ringkas */
+@media only screen and (max-width: 767px) {
+    .main-header .header-upper.style-three {
+        min-height: 60px;
+    }
+    .main-header .header-upper.style-three .container {
+        min-height: 60px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Override banner besar di mobile — tinggi dari responsive.css (full viewport) */
+    .main-slider2 {
+        min-height: unset !important;
+    }
+
+    /* Page-title banner (about, services, contact) */
+    .page-title .outer-box {
+        height: auto !important;
+        min-height: 200px;
+        padding: 50px 20px !important;
+    }
+    .page-title h1 {
+        font-size: 28px;
+        line-height: 1.2em;
+    }
+
+    /* Section spacing */
+    .sec-title.style-two .big-title {
+        font-size: 36px;
+    }
+    .sec-title h1 {
+        font-size: 26px;
+        line-height: 1.3em;
+    }
+    .feature-case-two .image {
+        margin-bottom: 20px;
+    }
+    .feature-case-two .inner-box {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Service cards (services page) */
+    .service-block-four {
+        margin-bottom: 24px;
+    }
+    .service-block-four .inner-box .lower-content {
+        padding: 20px 18px;
+    }
+    .service-block-four h4 {
+        font-size: 18px;
+    }
+
+    /* Parallax CTA */
+    .parallax-section .sec-title h1 {
+        font-size: 24px;
+    }
+    .parallax-section .text {
+        font-size: 14px;
+    }
+
+    /* Form kontak: full width, spacing */
+    .contact-form .form-group {
+        margin-bottom: 18px;
+    }
+    .contact-form .form-control {
+        width: 100%;
+    }
+
+    /* Fun facts / counter (about): rapi di mobile */
+    .funfact-section-two .counter-column,
+    .funfact-section-two .column {
+        margin-bottom: 24px;
+    }
+}
+
+/* Mobile kecil (≤599px) */
+@media only screen and (max-width: 599px) {
+    .page-title .outer-box {
+        min-height: 160px;
+        padding: 40px 15px !important;
+    }
+    .page-title h1 {
+        font-size: 24px;
+    }
+    .sec-title .big-title {
+        font-size: 32px;
+    }
+    .sec-title h1 {
+        font-size: 22px;
+    }
+    .theme-btn.btn-style-one {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* =============================================
+   MOBILE — TAMPILAN LEBIH KEREN, RAPI & NYAMAN
+   ============================================= */
+
+@media only screen and (max-width: 991px) {
+    /* Body: hindari horizontal scroll, font nyaman, tap halus */
+    .page-wrapper {
+        overflow-x: hidden;
+    }
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: rgba(230, 32, 45, 0.08);
+    }
+    a,
+    button {
+        -webkit-tap-highlight-color: rgba(230, 32, 45, 0.08);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* ---------- Section spacing seragam & lega ---------- */
+    .sp-two,
+    .sp-one,
+    .service-section,
+    .feature-case-section-two,
+    .what-we-do,
+    .what-we-do-three,
+    .why-chooseus-two,
+    .client-logo {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+    .grey-bg.sp-one,
+    .grey-bg.sp-two {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+
+    /* ---------- Container: napas lebih lega ---------- */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        max-width: 100%;
+    }
+
+    /* ---------- Hero / Slider — gambar full isi layar mobile ---------- */
+    .main-slider2 .slider-wrapper .image img {
+        object-fit: cover;
+        object-position: center center;
+    }
+    .main-slider2 .slider-caption {
+        padding: 28px 20px 32px !important;
+    }
+    .main-slider2 .slider-caption-bg {
+        padding: 0 16px !important;
+    }
+    .main-slider2 .dark h2 {
+        font-size: 22px;
+        line-height: 1.35em;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .main-slider2 .dark .text {
+        font-size: 15px;
+        line-height: 1.6em;
+        margin-bottom: 18px;
+        color: #d0d0d0;
+    }
+    .main-slider2 .theme-btn,
+    .main-slider2 .link-btn .theme-btn {
+        min-height: 48px;
+        padding: 14px 28px !important;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    /* ---------- Page title / Banner dalam ---------- */
+    .page-title {
+        border-radius: 0;
+    }
+    .page-title .outer-box {
+        padding: 44px 24px !important;
+    }
+    .page-title h1 {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+    }
+    .page-title .bread-crumb {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+    .page-title .bread-crumb a,
+    .page-title .bread-crumb li {
+        color: rgba(255,255,255,0.9);
+    }
+
+    /* ---------- Judul section — hierarchy jelas ---------- */
+    .sec-title .big-title {
+        font-size: 38px;
+        opacity: 0.08;
+        margin-bottom: 8px;
+    }
+    .sec-title h1 {
+        font-size: 24px;
+        line-height: 1.35em;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .sec-title.style-two.centered .text,
+    .sec-title .text {
+        font-size: 15px;
+        line-height: 1.65em;
+        color: #555;
+    }
+
+    /* ---------- Feature case (Layanan Unggulan) — card rapi ---------- */
+    .feature-case-two {
+        margin-bottom: 40px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .feature-case-two:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .feature-case-two .image {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .feature-case-two .image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .feature-case-two .inner-box h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        line-height: 1.3em;
+    }
+    .feature-case-two .service-text {
+        font-size: 15px;
+        line-height: 1.65em;
+        color: #444;
+    }
+
+    /* ---------- Service cards (halaman Layanan) ---------- */
+    .service-block-four .inner-box {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .service-block-four .inner-box .image {
+        border-radius: 12px 12px 0 0;
+        overflow: hidden;
+    }
+    .service-block-four .inner-box .image img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+    .service-block-four .inner-box .lower-content {
+        padding: 24px 20px !important;
+    }
+    .service-block-four h4 a {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.35em;
+    }
+    .service-block-four .text {
+        font-size: 14px;
+        line-height: 1.65em;
+        color: #555;
+    }
+
+    /* ---------- Parallax CTA — jelas & tap-friendly ---------- */
+    .parallax-section {
+        padding: 48px 20px !important;
+    }
+    .parallax-section .sec-title h1 {
+        font-size: 22px;
+        line-height: 1.35em;
+        margin-bottom: 14px;
+    }
+    .parallax-section .text {
+        font-size: 15px;
+        line-height: 1.6em;
+    }
+    .parallax-section .theme-btn {
+        min-height: 48px;
+        padding: 14px 28px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    /* ---------- Footer — rapi & readable ---------- */
+    .main-footer {
+        padding-top: 44px !important;
+    }
+    .main-footer .footer-column {
+        margin-bottom: 36px;
+    }
+    .main-footer .footer-logo {
+        margin-bottom: 20px !important;
+    }
+    .main-footer .footer-logo img {
+        max-height: 72px !important;
+    }
+    .main-footer .about-widget .text {
+        font-size: 14px;
+        line-height: 1.7em;
+        color: rgba(255,255,255,0.85);
+    }
+    .main-footer .widget-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 18px;
+    }
+    .main-footer .list li {
+        margin-bottom: 10px;
+    }
+    .main-footer .list li a {
+        font-size: 14px;
+        padding: 4px 0;
+    }
+    .main-footer .footer-bottom {
+        padding: 20px 0;
+        margin-top: 8px;
+    }
+    .main-footer .copyright-text p {
+        font-size: 13px;
+    }
+
+    /* ---------- Tombol global — konsisten & nyaman di tap ---------- */
+    .theme-btn.btn-style-one {
+        min-height: 48px;
+        padding: 14px 28px;
+        font-size: 15px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+    .link-btn .theme-btn {
+        min-height: 48px;
+        padding: 14px 28px;
+        border-radius: 8px;
+    }
+
+    /* ---------- Form kontak ---------- */
+    .contact-form .form-group {
+        margin-bottom: 20px;
+    }
+    .contact-form .form-control {
+        padding: 14px 16px;
+        font-size: 16px;
+        border-radius: 8px;
+        min-height: 48px;
+    }
+    .contact-form textarea.form-control {
+        min-height: 140px;
+        padding: 16px;
+    }
+    .contact-form .theme-btn {
+        min-height: 48px;
+        padding: 14px 28px;
+        border-radius: 8px;
+    }
+
+    /* ---------- Menu collapse — nyaman dibaca ---------- */
+    .main-header .header-upper.style-three .navbar-collapse .navigation li a {
+        padding: 14px 0 !important;
+        font-size: 16px;
+    }
+
+    /* ---------- Why choose us (about/services) ---------- */
+    .why-chooseus-two .sec-title h1 {
+        font-size: 24px;
+    }
+    .why-chooseus-two .text {
+        font-size: 15px;
+        line-height: 1.65em;
+    }
+    .service-block-five .inner-box {
+        padding: 20px 0;
+    }
+    .service-block-five h4 {
+        font-size: 17px;
+    }
+    .service-block-five .service-text {
+        font-size: 14px;
+        line-height: 1.6em;
+    }
+
+    /* ---------- Kartu layanan carousel (index / about) — service-block-eight ---------- */
+    .service-block-eight .inner-box {
+        padding: 24px 20px;
+        border-radius: 12px;
+        min-height: auto;
+    }
+    .service-block-eight h4 {
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .service-block-eight .text {
+        font-size: 14px;
+        line-height: 1.65em;
+    }
+    .service-block-eight .read-more-btn {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    /* ---------- About: profil perusahaan + gambar ---------- */
+    .what-we-do .sec-title h1 {
+        font-size: 24px;
+        line-height: 1.35em;
+    }
+    .what-we-do .text {
+        font-size: 15px;
+        line-height: 1.7em;
+    }
+    .what-we-do .stacked-image-carousel {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* ---------- About: Misi & Visi ---------- */
+    .mission-block .inner-box {
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+    .mission-block .count {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .mission-block h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .mission-block .text {
+        font-size: 14px;
+        line-height: 1.65em;
+    }
+
+    /* ---------- Fun facts (about) — angka & ikon ---------- */
+    .funfact-section-two .counter-column .inner-box,
+    .funfact-section-two .column .inner-box {
+        padding: 24px 16px;
+    }
+    .funfact-section-two .count-text {
+        font-size: 36px;
+    }
+    .funfact-section-two .count-outer p {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .container {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+    .sp-two,
+    .sp-one,
+    .service-section,
+    .feature-case-section-two,
+    .what-we-do,
+    .what-we-do-three,
+    .why-chooseus-two {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .main-slider2 .slider-caption {
+        padding: 24px 16px 28px !important;
+    }
+    .main-slider2 .dark h2 {
+        font-size: 20px;
+    }
+    .page-title .outer-box {
+        padding: 36px 18px !important;
+    }
+    .page-title h1 {
+        font-size: 22px;
+    }
+    .sec-title .big-title {
+        font-size: 32px;
+    }
+    .sec-title h1 {
+        font-size: 22px;
+    }
+    .feature-case-two .inner-box h4 {
+        font-size: 18px;
+    }
+    .service-block-four .inner-box .lower-content {
+        padding: 20px 18px !important;
+    }
+    .parallax-section {
+        padding: 40px 18px !important;
+    }
+    .parallax-section .sec-title h1 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,217 @@
+/* Bremond - HTML Template */
+
+/* Slider: tablet landscape */
+@media only screen and (max-width: 1300px) {
+	.main-slider2 .slider-wrapper .image img {
+		width: 100%;
+		height: 560px;
+	}
+}
+
+/* Slider: tablet portrait */
+@media only screen and (max-width: 1024px) {
+	.main-slider2 .slider-wrapper .image img {
+		width: 100%;
+		height: 480px;
+	}
+	/* Parallax: nonaktifkan fixed attachment di tablet/mobile (bug iOS Safari) */
+	.parallax-section {
+		background-attachment: scroll;
+		background-size: cover;
+		background-position: center center;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.page-wrapper {
+		margin-bottom: 0px !important;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.service-block-one-area {
+		padding-left: 0px;
+	}
+	.service-block-two-area .outer-box {
+		margin-top: 50px;
+		margin-left: 0px;
+	}
+	.testimonial-block-two .text {
+		padding: 0 75px;
+	}
+	.feature-case-two:nth-child(2) .row,
+	.feature-case-two:nth-child(4) .row {
+	    flex-direction: column-reverse;
+	}
+	.feature-case-two .image {
+		margin-bottom: 30px;
+	}
+	.stacked-image-carousel {
+		margin-left: 0px;
+	}
+	.testimonial-block-three .big-image {
+		bottom: -100px;
+	}
+	.testimonial-three .owl-nav-style-one .owl-nav {
+		margin-top: 0px;
+		top: -80px;
+	}
+}
+/* ===== MOBILE (<=767px) ===== */
+@media only screen and (max-width: 767px) {
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.sec-title .big-title {
+		font-size: 42px;
+	}
+
+	/* Slider: full gambar (tidak terpotong) + banner & teks di atas */
+	.main-slider2 {
+		min-height: unset;
+	}
+	.main-slider2 .slider-wrapper {
+		position: relative;
+		display: block;
+		height: calc(100vh - 60px);
+		min-height: 400px;
+	}
+	.main-slider2 .slider-wrapper .image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.main-slider2 .slider-wrapper .image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+	.main-slider2 .slider-caption {
+		position: absolute !important;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		background: none !important;
+		padding: 20px 0;
+	}
+	.main-slider2 .slide-overlay {
+		display: block !important;
+		background: rgba(0, 0, 0, 0.45);
+	}
+	.main-slider2 .slider-caption-bg {
+		max-width: 100%;
+		background: transparent !important;
+		padding: 0 20px;
+	}
+	.main-slider2 .dark h2 {
+		color: #ffffff;
+		font-size: 26px;
+		line-height: 1.3em;
+		margin-bottom: 12px;
+		text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+	}
+	.main-slider2 .dark .text {
+		color: #e8e8e8;
+		font-size: 14px;
+		line-height: 1.6em;
+		margin-bottom: 15px;
+		text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+	}
+	.main-slider2 .link-btn {
+		padding-top: 10px;
+	}
+
+	/* Page title banner mobile */
+	.page-title {
+		background-position: center center;
+	}
+
+	/* Feature cases: stack gambar di atas teks */
+	.feature-case-two .col-lg-6 {
+		width: 100%;
+	}
+	.feature-case-two .image img {
+		width: 100%;
+		height: auto;
+	}
+
+	/* Footer mobile */
+	.footer-column {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.footer-column:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Client logo: rapi di mobile */
+	.client-logo {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.client-logo-area ul li {
+		padding: 0 10px;
+	}
+	.client-logo-area ul li img {
+		max-height: 36px;
+		width: auto;
+		opacity: 0.7;
+	}
+}
+
+/* ===== MOBILE KECIL (<=599px) ===== */
+@media only screen and (max-width: 599px) {
+	.container {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.main-slider2 h1 {
+		font-size: 48px;
+		line-height: 50px;
+	}
+	.testimonial-block-two .text {
+		padding: 0px;
+	}
+	.testimonial-two .owl-nav {
+		display: none;
+	}
+	/* About page: 2 slides — reset stacking agar rapi di mobile */
+	.stacked-image-carousel .slide.active,
+	.stacked-image-carousel .slides .slide,
+	.stacked-image-carousel .slides .slide:nth-child(2),
+	.stacked-image-carousel .slides .slide:nth-child(2).active {
+		top: 0px !important;
+		left: 0px !important;
+	}
+	.stacked-image-carousel .image img {
+		width: 100%;
+		height: auto;
+	}
+	.timeline-container .timeline-block .inner-box {
+	    padding-left: 130px;
+	}
+	.timeline-container .timeline-block:before {
+	    left: 100px;
+	}
+	.timeline-container .timeline-block:after {
+	    left: 92px;
+	}
+	.news-block-one .lower-content.style-two {
+		margin: 0px;
+	}
+	.page-title .outer-box {
+	    display: block;
+	    vertical-align: middle;
+	    padding: 80px 0;
+	    height: auto;
+	}
+}
+
