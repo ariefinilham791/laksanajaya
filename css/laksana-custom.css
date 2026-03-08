@@ -118,6 +118,63 @@
 }
 
 /* =============================================
+   HALAMAN LAYANAN — INTRO TEKS
+   ============================================= */
+.service-intro-text {
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+/* =============================================
+   COMPANY PROFILE BUTTON — simple link style
+   ============================================= */
+/* Header: link kecil sejajar menu */
+.btn-profile-header {
+    margin-left: 20px;
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #212733;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.btn-profile-header:hover {
+    color: #e6202d;
+    border-color: #e6202d;
+    background: rgba(230, 32, 45, 0.04);
+}
+.btn-profile-header .fa {
+    margin-right: 5px;
+    font-size: 13px;
+}
+/* About: tombol kecil di samping Konsultasi */
+.btn-profile-download {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #212733;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 14px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.btn-profile-download:hover {
+    color: #e6202d;
+    border-color: #e6202d;
+    background: rgba(230, 32, 45, 0.04);
+}
+.btn-profile-download .fa {
+    margin-right: 5px;
+    font-size: 13px;
+}
+.link-btn .theme-btn + .btn-profile-download {
+    margin-left: 10px;
+}
+
+/* =============================================
    RESPONSIVE — TABLET & MOBILE
    ============================================= */
 
@@ -372,10 +429,19 @@
     .page-title .bread-crumb {
         font-size: 13px;
         margin-top: 8px;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        gap: 4px 8px;
     }
     .page-title .bread-crumb a,
     .page-title .bread-crumb li {
         color: rgba(255,255,255,0.9);
+    }
+    .page-title .outer-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     /* ---------- Judul section — hierarchy jelas ---------- */
@@ -431,6 +497,48 @@
         color: #444;
     }
 
+    /* ---------- Halaman Layanan: judul section & container ---------- */
+    .service-section .sec-title.style-two.centered {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .service-section .sec-title.style-two.centered h1,
+    .service-section .sec-title .big-title {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .service-section .container {
+        overflow-x: hidden;
+    }
+
+    /* ---------- Halaman Layanan: intro teks ---------- */
+    .service-intro-text {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-bottom: 32px;
+    }
+    .service-intro-text p {
+        font-size: 15px;
+        line-height: 1.7em;
+        margin-bottom: 0;
+    }
+
+    /* ---------- Service section: row tidak overflow di mobile ---------- */
+    .service-section .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .service-section .service-block-four {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 28px;
+        max-width: 100%;
+    }
+    .service-section .service-block-four:last-child,
+    .service-section .service-block-four:nth-last-child(2) {
+        margin-bottom: 0;
+    }
+
     /* ---------- Service cards (halaman Layanan) ---------- */
     .service-block-four .inner-box {
         border-radius: 12px;
@@ -445,9 +553,16 @@
         width: 100%;
         height: 220px;
         object-fit: cover;
+        max-width: 100%;
     }
     .service-block-four .inner-box .lower-content {
         padding: 24px 20px !important;
+        box-sizing: border-box;
+    }
+    .service-block-four .inner-box .lower-content h4 a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: block;
     }
     .service-block-four h4 a {
         font-size: 18px;
@@ -458,6 +573,7 @@
         font-size: 14px;
         line-height: 1.65em;
         color: #555;
+        word-wrap: break-word;
     }
 
     /* ---------- Parallax CTA — jelas & tap-friendly ---------- */
@@ -557,24 +673,89 @@
         padding: 14px 0 !important;
         font-size: 16px;
     }
+    /* Company Profile button di menu collapse */
+    .main-header .navbar-collapse .btn-profile-header {
+        margin-left: 0;
+        margin-top: 12px;
+        display: inline-block;
+    }
+    /* About: dua tombol stack di mobile */
+    .link-btn .theme-btn + .btn-profile-download {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .link-btn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 0;
+    }
 
-    /* ---------- Why choose us (about/services) ---------- */
+    /* ---------- Why choose us (about/services) — rapi di mobile ---------- */
+    .why-chooseus-two .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .why-chooseus-two .col-lg-6 {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 24px;
+    }
+    .why-chooseus-two .col-lg-6:last-child {
+        margin-bottom: 0;
+    }
+    .why-choose-list {
+        margin-top: 8px;
+    }
     .why-chooseus-two .sec-title h1 {
         font-size: 24px;
+        line-height: 1.3em;
+    }
+    .why-chooseus-two .sec-title h1 br {
+        display: none;
     }
     .why-chooseus-two .text {
         font-size: 15px;
         line-height: 1.65em;
     }
+    .why-chooseus-two .text p {
+        margin-bottom: 16px;
+    }
+    .why-chooseus-two .link-btn.mt-40 {
+        margin-top: 24px !important;
+    }
+    /* service-block-five: di mobile ikon di atas teks, tidak pakai padding kiri besar */
     .service-block-five .inner-box {
-        padding: 20px 0;
+        padding: 20px 0 !important;
+        padding-left: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .service-block-five .inner-box .icon-box {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: auto !important;
+        margin-bottom: 12px;
+        font-size: 32px;
+    }
+    .service-block-five .inner-box .icon-box span.icon {
+        font-size: 32px;
     }
     .service-block-five h4 {
         font-size: 17px;
+        margin-bottom: 8px;
     }
     .service-block-five .service-text {
         font-size: 14px;
         line-height: 1.6em;
+        padding-bottom: 0;
+    }
+    .service-block-five {
+        margin-bottom: 20px;
+    }
+    .service-block-five:last-child {
+        margin-bottom: 0;
     }
 
     /* ---------- Kartu layanan carousel (index / about) — service-block-eight ---------- */
@@ -680,8 +861,22 @@
     .feature-case-two .inner-box h4 {
         font-size: 18px;
     }
+    .service-intro-text {
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-bottom: 28px;
+    }
+    .service-block-four .inner-box .image img {
+        height: 200px;
+    }
     .service-block-four .inner-box .lower-content {
         padding: 20px 18px !important;
+    }
+    .service-block-four h4 a {
+        font-size: 16px;
+    }
+    .why-chooseus-two .sec-title h1 {
+        font-size: 22px;
     }
     .parallax-section {
         padding: 40px 18px !important;
